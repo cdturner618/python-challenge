@@ -28,11 +28,15 @@ with open(file_path) as csvfile:
         total_months = total_months + 1
         print(row)
 
-        # Results shoud look like this
-        # Financial Analysis
-        # ----------------------------
-        # Total Months: 86
-        # Total: $38382578
-        # Average  Change: $-2315.12
-        # Greatest Increase in Profits: Feb-2012 ($1926159)
-        # Greatest Decrease in Profits: Sep-2013 ($-2196167)
+# print results
+print("Finacial Analysis")
+print("----------------------------------")
+print(f"Total Months: {total_months}")
+# Results shoud look like this
+# Financial Analysis
+# ----------------------------
+# Total Months: 86
+# Total: $38382578
+# Average  Change: $-2315.12
+# Greatest Increase in Profits: Feb-2012 ($1926159)
+# Greatest Decrease in Profits: Sep-2013 ($-2196167)
