@@ -14,7 +14,8 @@ greates_increase = {}
 # The greatest decrease in losses(date and amount) over the entire period
 greates_decrease = {}
 
-file_path = "./Resoruces/Budget_data.csv"
+file_path = "./Resources/Budget_data.csv"
+
 with open(file_path) as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile)
