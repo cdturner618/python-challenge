@@ -16,13 +16,12 @@ with open(file_path) as csvfile:
     # Read each row of data after the header
     for row in csvreader:
         # The total number of months included in the dataset
-        total_months = total_months + 1
+        # total_months = total_months + 1
         date = row[0]
         profit = float(row[1])
         # The net total amount of "Profit/Losses" over the entire period
-        csvfile.seek(0)
-        if total_profit_loss > 0:
-            total_profit_loss = total_profit_loss + profit
+        # csvfile.seek(0)
+        total_profit_loss = total_profit_loss
 
         # Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
         # average_profit_loss =
@@ -38,7 +37,7 @@ with open(file_path) as csvfile:
 # print results
 print("Finacial Analysis")
 print("----------------------------------")
-print(f"Total Months: {total_months}")
+#print(f"Total Months: {total_months}")
 print(f"Total:{total_profit_loss}")
 print(
     f"Greatest Increase in Profits:{greatest_increase['date']} (${greatest_increase['amount']})")
