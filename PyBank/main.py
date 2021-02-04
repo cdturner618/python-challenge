@@ -1,4 +1,3 @@
-# The total number of months included in the dataset
 import csv
 total_months = 0
 total_profit_loss = 0.00
@@ -21,10 +20,12 @@ with open(file_path) as csvfile:
         date = row[0]
         profit = float(row[1])
         # The net total amount of "Profit/Losses" over the entire period
-        total_profit_loss = total_profit_loss + 1
+        csvfile.seek(0)
+        if total_profit_loss > 0:
+            total_profit_loss = total_profit_loss + profit
 
         # Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
-
+        # average_profit_loss =
         # The greatest increase in profits(date and amount) over the entire period
         if (profit > greatest_increase["amount"]):
             greatest_increase["date"] = date
