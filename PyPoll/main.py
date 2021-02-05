@@ -1,10 +1,13 @@
 import csv
-total_Votes = 0
+total_votes = 0.00
 Percentage_Votes = 0.00
 Candidate_Votes = 0
-Winner = str[0]
+# voter_id = float(row[0])
+# country = row[1]
+# candidate = row[2]
+#Winner = {"Voter ID": "", "Candidate": 0}
 
-file_path = "./Resources/Budget_data.csv"
+file_path = "./Resources/election_data.csv"
 
 with open(file_path) as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
@@ -15,7 +18,7 @@ with open(file_path) as csvfile:
     # Read each row of data after the header
     for row in csvreader:
         # The total number of votes cast
-
+        print(row)
         # A complete list of candidates who received votes
 
         # The percentage of votes each candidate won
@@ -27,7 +30,7 @@ with open(file_path) as csvfile:
         # print results
 print("Election Results")
 print("----------------------------------")
-
+#print(f"Total Votes: {total_votes}")
 # Results shoud look like this
 # Election Results
 # -------------------------
