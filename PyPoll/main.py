@@ -1,5 +1,5 @@
 import csv
-total_votes = 0.00
+total_votes = 0
 Percentage_Votes = 0.00
 Candidate_Votes = 0
 # voter_id = float(row[0])
@@ -18,7 +18,7 @@ with open(file_path) as csvfile:
     # Read each row of data after the header
     for row in csvreader:
         # The total number of votes cast
-        print(row)
+        total_votes = total_votes + 1
         # A complete list of candidates who received votes
 
         # The percentage of votes each candidate won
@@ -27,10 +27,10 @@ with open(file_path) as csvfile:
 
         # The greatest decrease in losses(date and amount) over the entire period
 
-        # print results
+# print results
 print("Election Results")
 print("----------------------------------")
-#print(f"Total Votes: {total_votes}")
+print(f"Total Votes: {total_votes}")
 # Results shoud look like this
 # Election Results
 # -------------------------
