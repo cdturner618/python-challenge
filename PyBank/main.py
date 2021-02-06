@@ -1,5 +1,5 @@
 import csv
-import math
+
 total_months = 0
 total_profit_loss = 0.00
 #average_profit_loss = 0.00
