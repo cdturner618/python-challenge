@@ -2,10 +2,12 @@ import csv
 import math
 total_months = 0
 total_profit_loss = 0.00
-average_profit_loss = 0.00
+#average_profit_loss = 0.00
 greatest_increase = {"date": "", "amount": 0}
 greatest_decrease = {"date": "", "amount": 0}
-
+temp = 0.00
+change_profit = 0.00
+change_profit_list = []
 
 file_path = "./Resources/Budget_data.csv"
 
@@ -26,6 +28,10 @@ with open(file_path) as csvfile:
         total_profit_loss = total_profit_loss + profit
 
         # calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
+        if row[0] != "Jan-2010":
+            change_profit = profit - temp
+            change_profit_list.append(change_profit)
+        temp = profit
 
         # The greatest increase in profits(date and amount) over the entire period
         if (profit > greatest_increase["amount"]):
@@ -41,6 +47,7 @@ print("Finacial Analysis")
 print("----------------------------------")
 print(f"Total Months: {total_months}")
 print(f"Total: {total_profit_loss}")
+print(f"Average:{round(sum(change_profit_list) / (total_months - 1), 2)}")
 print(
     f"Greatest Increase in Profits:{greatest_increase['date']} (${greatest_increase['amount']})")
 print(
