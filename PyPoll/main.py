@@ -36,15 +36,18 @@ with open(file_path) as csvfile:
 
             # print results
             # print(candidates_dictionary)
-
+winner = ("", 0)
 print("Election Results")
 print("----------------------------------")
 print(f"Total Votes: {total_votes}")
 print("----------------------------------")
 for key, value in candidates_dictionary.items():
     print(f"{key}: {round(value / total_votes*100, 2)}% ({value})")
+    if value > winner[1]:
+        winner = (key, value)
 print("----------------------------------")
-
+print(f"Winner: {winner[0]}")
+print("----------------------------------")
 # print(f"List of Candidates: {candidate}")
 # Results shoud look like this
 # Election Results
