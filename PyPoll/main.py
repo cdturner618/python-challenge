@@ -25,7 +25,6 @@ with open(file_path) as csvfile:
             candidates_dictionary[Name] += 1
         else:
             candidates_dictionary[Name] = 1
-            print(candidates_dictionary)
 
             # A complete list of candidates who received votes
 
@@ -41,6 +40,10 @@ with open(file_path) as csvfile:
 print("Election Results")
 print("----------------------------------")
 print(f"Total Votes: {total_votes}")
+print("----------------------------------")
+for key, value in candidates_dictionary.items():
+    print(f"{key}: {round(value / total_votes*100, 2)}% ({value})")
+print("----------------------------------")
 
 # print(f"List of Candidates: {candidate}")
 # Results shoud look like this
