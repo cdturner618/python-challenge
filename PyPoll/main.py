@@ -20,27 +20,22 @@ with open(file_path) as csvfile:
     for row in csvreader:
         # The total number of votes cast
         total_votes = total_votes + 1
+        # A complete list of candidates who received votes
         Name = row[2]
         if Name in candidates_dictionary:
             candidates_dictionary[Name] += 1
         else:
             candidates_dictionary[Name] = 1
 
-            # A complete list of candidates who received votes
-
-            # The percentage of votes each candidate won
-
-            # The total number of votes each candidate won
-
-            # The winner of the election based on popular vote.
-
-            # print results
-            # print(candidates_dictionary)
+# The winner of the election based on popular vote.
 winner = ("", 0)
 print("Election Results")
 print("----------------------------------")
 print(f"Total Votes: {total_votes}")
 print("----------------------------------")
+# The percentage of votes each candidate won
+
+# The total number of votes each candidate won
 for key, value in candidates_dictionary.items():
     print(f"{key}: {round(value / total_votes*100, 2)}% ({value})")
     if value > winner[1]:
