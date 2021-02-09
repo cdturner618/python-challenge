@@ -10,6 +10,7 @@ change_profit = 0.00
 change_profit_list = []
 
 file_path = "./Resources/Budget_data.csv"
+output_file = "./Analysis/output.txt"
 
 with open(file_path) as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
@@ -52,6 +53,11 @@ print(
     f"Greatest Increase in Profits:{greatest_increase['date']} (${greatest_increase['amount']})")
 print(
     f"Greatest Decrease in Profits:{greatest_decrease['date']} (${greatest_decrease['amount']})")
+
+# Write to a file
+with open(output_file, 'w') as outputFile:
+    outputFile.write("Finacial Analysis")
+
 
 # # Results shoud look like this
 # # Financial Analysis
