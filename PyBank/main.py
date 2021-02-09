@@ -57,15 +57,15 @@ print(
 # Write to a file
 with open(output_file, 'w') as outputFile:
     outputFile.write("Finacial Analysis")
-    outputFile.write("----------------------------------")
-    outputFile.write(f"Total Months: {total_months}")
-    outputFile.write(f"Total: {total_profit_loss}")
+    outputFile.write("----------------------------------\n")
+    outputFile.write(f"Total Months: {total_months}\n")
+    outputFile.write(f"Total: {total_profit_loss}\n")
     outputFile.write(
-        f"Average:{round(sum(change_profit_list) / (total_months - 1), 2)}")
+        f"Average:{round(sum(change_profit_list) / (total_months - 1), 2)}\n")
     outputFile.write(
-        f"Greatest Increase in Profits:{greatest_increase['date']} (${greatest_increase['amount']})")
+        f"Greatest Increase in Profits:{greatest_increase['date']} (${greatest_increase['amount']})\n")
     outputFile.write(
-        f"Greatest Decrease in Profits:{greatest_decrease['date']} (${greatest_decrease['amount']})")
+        f"Greatest Decrease in Profits:{greatest_decrease['date']} (${greatest_decrease['amount']})\n")
 
 # # Results shoud look like this
 # # Financial Analysis
