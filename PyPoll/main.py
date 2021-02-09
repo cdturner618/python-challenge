@@ -1,14 +1,12 @@
 import csv
 total_votes = 0
-List_Candidates = []
-Percentage_Votes = 0.00
-Candidate_Votes = 0
-change_candidate = 0.00
-temp = 0.00
+candidates_dictionary = {}
+Name = ""
+
 # voter_id = float(row[0])
 # country = row[1]
-# candidate = row[2]
-#Winner = {"Voter ID": "", "Candidate": 0}
+# candidate_row = {}
+# Winner = {"Voter ID": "", "Candidate": 0}
 
 file_path = "./Resources/election_data.csv"
 
@@ -22,21 +20,29 @@ with open(file_path) as csvfile:
     for row in csvreader:
         # The total number of votes cast
         total_votes = total_votes + 1
-        candidate = row[2]
-        # A complete list of candidates who received votes
-        List_Candidates = candidate
-        print(List_Candidates)
-    # The percentage of votes each candidate won
+        Name = row[2]
+        if Name in candidates_dictionary:
+            candidates_dictionary[Name] += 1
+        else:
+            candidates_dictionary[Name] = 1
+            print(candidates_dictionary)
 
-    # The winner of the election based on popular vote.
+            # A complete list of candidates who received votes
 
-    # The greatest decrease in losses(date and amount) over the entire period
+            # The percentage of votes each candidate won
 
-    # print results
+            # The total number of votes each candidate won
+
+            # The winner of the election based on popular vote.
+
+            # print results
+            # print(candidates_dictionary)
+
 print("Election Results")
 print("----------------------------------")
 print(f"Total Votes: {total_votes}")
-print(f"List of Candidates: {List_Candidates}")
+
+# print(f"List of Candidates: {candidate}")
 # Results shoud look like this
 # Election Results
 # -------------------------
